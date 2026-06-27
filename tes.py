@@ -235,9 +235,8 @@ if menu == "Prediction":
                 ax.bar(
                     risk_df["Kategori"],
                     risk_df["Probabilitas"],
-                    color=plt.cm.YlOrBr(np.linspace(0.45, 0.85, len(risk_df)))
+                    color=["#FFD54F", "#FB8C00"]
                 )
-
                 # Label persentase
                 for i, v in enumerate(risk_df["Probabilitas"]):
                     ax.text(i, v + 0.01, f"{v:.2%}", ha='center')
