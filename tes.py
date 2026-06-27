@@ -8,16 +8,21 @@ from sklearn.metrics import confusion_matrix
 # ======================
 # LOAD MODEL
 # ======================
+# default dulu
+X_test, y_test = None, None
+
 try:
     rf = joblib.load("model_rf.pkl")
-    logreg = joblib.load("model_logreg.pkl") 
-    ann = joblib.load("model_ann.pkl") 
+    logreg = joblib.load("model_logreg.pkl")
+    ann = joblib.load("model_ann.pkl")
     scaler = joblib.load("scaler.pkl")
     fitur = joblib.load("fitur.pkl")
-except:
-    X_test, y_test = None, None
-    st.error("Model atau file tidak ditemukan!")
-    st.stop()
+
+    X_test = joblib.load("X_test.pkl")
+    y_test = joblib.load("y_test.pkl")
+
+except Exception as e:
+    st.error(f"Error loading file: {e}")
 
 # ======================
 # CONFIG UI
