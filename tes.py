@@ -63,8 +63,8 @@ section[data-testid="stSidebar"] * {
     font-weight: bold;
     border: none;
 }
-div[data-testid="stProgressBar"] > div {
-    background: linear-gradient(90deg, #f7971e, #ffd200) !important;
+div[data-testid="stProgressBar"] > div > div > div > div {
+    background: linear-gradient(90deg, #FFE082, #FFA000) !important;
 }
 
 /* Hover button */
@@ -234,7 +234,8 @@ if menu == "Prediction":
 
                 ax.bar(
                     risk_df["Kategori"],
-                    risk_df["Probabilitas"]
+                    risk_df["Probabilitas"],
+                    color=plt.cm.YlOrBr(np.linspace(0.45, 0.85, len(risk_df)))
                 )
 
                 # Label persentase
