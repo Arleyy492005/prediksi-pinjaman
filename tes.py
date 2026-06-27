@@ -14,9 +14,6 @@ try:
     ann = joblib.load("model_ann.pkl") 
     scaler = joblib.load("scaler.pkl")
     fitur = joblib.load("fitur.pkl")
-    # TAMBAHAN
-    X_test = joblib.load("X_test.pkl")
-    y_test = joblib.load("y_test.pkl")
 except:
     X_test, y_test = None, None
     st.error("Model atau file tidak ditemukan!")
