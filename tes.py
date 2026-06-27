@@ -275,7 +275,11 @@ elif menu == "Model Comparison":
         accuracy = [acc_rf, acc_log, acc_ann]
 
         fig, ax = plt.subplots()
-        bars = ax.bar(models, accuracy)
+        bars = ax.bar(
+            models,
+            accuracy,
+            color=plt.cm.YlOrBr(np.linspace(0.4, 0.9, len(models)))
+        )
 
         # Tambahin label
         for bar in bars:
