@@ -10,8 +10,8 @@ from sklearn.metrics import confusion_matrix
 # ======================
 try:
     rf = joblib.load("model_rf.pkl")
-    logreg = joblib.load('model_logreg.pkl') 
-    ann = joblib.load('model_ann.pkl') 
+    logreg = joblib.load("model_logreg.pkl") 
+    ann = joblib.load("model_ann.pkl") 
     scaler = joblib.load("scaler.pkl")
     fitur = joblib.load("fitur.pkl")
     # TAMBAHAN
