@@ -309,9 +309,12 @@ elif menu == "Feature Importance":
 
     fig, ax = plt.subplots()
 
+    colors = plt.cm.YlOrBr(np.linspace(0.4, 0.9, len(idx)))
+
     ax.barh(
         range(len(idx)),
-        importances[idx]
+        importances[idx],
+        color=colors
     )
 
     ax.set_yticks(range(len(idx)))
@@ -332,7 +335,7 @@ elif menu == "Confusion Matrix":
         cm = confusion_matrix(y_test, y_pred)
 
         fig, ax = plt.subplots()
-        cax = ax.matshow(cm)
+        cax = ax.matshow(cm, cmap="YlOrBr")
 
         fig.colorbar(cax)
 
